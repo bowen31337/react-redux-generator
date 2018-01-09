@@ -1,0 +1,77 @@
+{
+	"name": "react-redux-generator",
+	"version": "1.0.0",
+	"description": "This is a generator to create react redux project",
+	"main": "dist/reactReduxGenerator.cjs.js",
+	"keywords": [
+		"generator",
+		"rollup",
+		"react",
+		"redux"
+	],
+	"author": {
+		"name": "Bowen Li",
+		"email": "superdev@outlook.com.au"
+	},
+	"dependencies": {
+		"camel-case": "^3.0.0",
+		"chalk": "^2.3.0",
+		"clear": "^0.0.1",
+		"clui": "^0.3.6",
+		"commander": "^2.12.2",
+		"figlet": "^1.2.0",
+		"handlebars": "^4.0.11",
+		"inquirer": "^4.0.1",
+		"mkdirp": "^0.5.1",
+		"pascal-case": "^2.0.1"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-plugin-external-helpers": "^6.22.0",
+		"babel-preset-env": "^1.6.1",
+		"faucet": "^0.0.1",
+		"husky": "^0.14.3",
+		"lint-staged": "^6.0.0",
+		"prettier": "1.9.2",
+		"rollup": "^0.50.0",
+		"rollup-plugin-babel": "^3.0.3",
+		"rollup-plugin-commonjs": "^8.2.6",
+		"rollup-plugin-execute": "^1.0.0",
+		"rollup-plugin-json": "^2.3.0",
+		"rollup-plugin-node-resolve": "^3.0.0",
+		"rollup-plugin-uglify": "^2.0.1"
+	},
+	"preferGlobal": true,
+	"bin": {
+		"RRG": "dist/reactReduxGenerator.cjs.js"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"dev": "rollup -c -w",
+		"test": "node test/test.js | faucet",
+		"RRG": "plop --plopfile dist/reactReduxGenerator.es.js",
+		"pretest": "npm run build",
+		"precommit": "lint-staged",
+		"format": "prettier --trailing-comma es5 --single-quote --no-semi --write 'src/**/*.js'"
+	},
+	"lint-staged": {
+		"*.{js,json,css,md}": [
+			"prettier prettier --trailing-comma es5 --single-quote --no-semi --write",
+			"git add"
+		],
+		"yarn.lock": [
+			"git rm --cached",
+			"git add"
+		]
+	},
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:bowen31337/easyClassNames.git"
+	},
+	"engines": {
+		"node": ">=8.4.0"
+	}
+}

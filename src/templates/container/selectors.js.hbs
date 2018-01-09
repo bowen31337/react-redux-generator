@@ -1,0 +1,14 @@
+import { createSelector } from 'reselect'
+
+const select{{ properCase name }}Domain = () => state => state.get('{{ camelCase name }}')
+
+
+const select{{ properCase name }} = () => createSelector(
+  select{{ properCase name }}Domain(),
+  (substate) => substate.toJS()
+)
+
+export default select{{ properCase name }}
+export {
+  select{{ properCase name }}Domain,
+}

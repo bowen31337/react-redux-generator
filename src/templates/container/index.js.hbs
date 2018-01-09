@@ -1,0 +1,33 @@
+import React from 'react'
+import { connect } from 'react-redux'
+import {{ properCase name }} from '../components/{{ properCase name }}'
+
+{{#if wantActionsAndReducer}}
+import select{{properCase name}} from './selectors'
+{{/if}}
+
+
+export class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
+	render() {
+		return (
+			<div>
+			</div>
+		)
+	}
+}
+
+{{#if wantActionsAndReducer}}
+const mapStateToProps = select{{properCase name}}()
+{{/if}}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		dispatch
+	}
+}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase name }})
+{{else}}
+export default connect(mapDispatchToProps)({{ properCase name }})
+{{/if}}

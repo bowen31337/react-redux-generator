@@ -1,0 +1,21 @@
+import React from 'react'
+{{#if wantHeaders}}
+import Helmet from 'react-helmet'
+{{/if}}
+
+
+const {{ name }} = props => (
+	<div>
+		{{#if wantHeaders}}
+					<Helmet
+						title="{{properCase name}}"
+						meta={{curly true}}[
+							{{curly true}} name: 'description', content: 'Description of {{properCase name}}' {{curly}},
+						]{{curly}}
+					/>
+				{{/if}}
+	</div>
+)
+
+export default {{ name }}
+
