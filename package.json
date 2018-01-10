@@ -1,6 +1,6 @@
 {
 	"name": "react-redux-generator",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "This is a generator to create react redux project",
 	"main": "dist/reactReduxGenerator.cjs.js",
 	"keywords": [
@@ -66,7 +66,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:bowen31337/easyClassNames.git"
+		"url": "git@github.com:bowen31337/react-redux-generator.git"
 	},
 	"engines": {
 		"node": ">=8.4.0"
