@@ -1,6 +1,6 @@
 {
 	"name": "react-redux-generator",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "This is a generator to create react redux project",
 	"main": "dist/reactReduxGenerator.cjs.js",
 	"keywords": [
