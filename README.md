@@ -15,11 +15,26 @@ This generator is created to save minutes when creating components, containers a
 
 ## Usage
 
+###Command line
+
 ```bash
 RRG -c //add component
 RRG -C //add container
 RRG -r //add route
 ```
+
+###change the application source folder
+by default, the application source folder is 'src', it is changeable via .rrgrc file.
+
+For example, if you want to change it to "app" folder, then create .rrgrc file and put something like so:
+
+```
+{
+	"APP_SRC":"app"
+}
+
+```
+
 
 ## License
 
