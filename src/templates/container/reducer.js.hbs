@@ -1,17 +1,28 @@
 import { fromJS } from 'immutable'
 import {
-  DEFAULT_ACTION
+	FETCH_REMOTE_DATA,
+	FETCH_REMOTE_DATA_SUCCESS,
+	FETCH_REMOTE_DATA_FAILURE,
+	SUBMIT_FORM,
+	SUBMIT_FORM_SUCCESS,
+	SUBMIT_FORM_FAILURE,
 } from './constants'
 
 const initialState = fromJS({})
 
 function {{ camelCase name }}Reducer(state = initialState, action) {
-  switch (action.type) {
-    case DEFAULT_ACTION:
-      return state
-    default:
-      return state
-  }
+	switch (action.type) {
+		case FETCH_REMOTE_DATA:
+		case FETCH_REMOTE_DATA_SUCCESS:
+		case FETCH_REMOTE_DATA_FAILURE:
+		case SUBMIT_FORM:
+			return { ...state, ...action.payload }
+		case SUBMIT_FORM_SUCCESS:
+		case SUBMIT_FORM_FAILURE:
+			return { ...state, formSubmitStatus: action.payload }
+		default:
+			return state
+	}
 }
 
 export default {{ camelCase name }}Reducer

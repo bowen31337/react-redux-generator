@@ -1,18 +1,22 @@
-import expect from 'expect'
-import {
-  defaultAction,
-} from '../actions'
-import {
-  DEFAULT_ACTION,
-} from '../constants'
+import * as actions from '../actions'
+import * as types from '../constants'
 
-describe('{{ pascalCase name }} actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
-      const expected = {
-        type: DEFAULT_ACTION,
-      }
-      expect(defaultAction()).toEqual(expected)
-    })
-  })
+describe('EntryIvcForm actions', () => {
+	it('Fetch Remote Static Data action', () => {
+		expect(actions.fetchRemoteData()).toEqual({
+			type: types.FETCH_REMOTE_DATA,
+		})
+	})
+	it('Successfully Fetch Remote Static Data action', () => {
+		expect(actions.fetchRemoteDataSuccess({})).toEqual({
+			type: types.FETCH_REMOTE_DATA_SUCCESS,
+			payload: {},
+		})
+	})
+	it('Failed to Fetch Remote Static Data action', () => {
+		expect(actions.fetchRemoteDataFailure({})).toEqual({
+			type: types.FETCH_REMOTE_DATA_FAILURE,
+			payload: {},
+		})
+	})
 })

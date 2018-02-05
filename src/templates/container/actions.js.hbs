@@ -1,9 +1,36 @@
 import {
-  DEFAULT_ACTION
+	FETCH_REMOTE_DATA,
+	FETCH_REMOTE_DATA_SUCCESS,
+	FETCH_REMOTE_DATA_FAILURE,
+	SUBMIT_FORM,
+	SUBMIT_FORM_SUCCESS,
+	SUBMIT_FORM_FAILURE,
 } from './constants'
 
-export function defaultAction() {
-  return {
-    type: DEFAULT_ACTION,
-  }
-}
+export const fetchRemoteData = () => ({
+	type: FETCH_REMOTE_DATA,
+})
+
+export const fetchRemoteDataSuccess = data => ({
+	type: FETCH_REMOTE_DATA_SUCCESS,
+	payload: data,
+})
+
+export const fetchRemoteDataFailure = error => ({
+	type: FETCH_REMOTE_DATA_FAILURE,
+	payload: error,
+})
+
+export const submitForm = () => ({
+	type: SUBMIT_FORM,
+})
+
+export const submitFormSuccess = data => ({
+	type: SUBMIT_FORM_SUCCESS,
+	payload: data,
+})
+
+export const submitFormFailure = error => ({
+	type: SUBMIT_FORM_FAILURE,
+	payload: error,
+})
